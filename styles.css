@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffcc99, #d2691e); /* Orange-brown gradient */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay for contrast */
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f4a460; /* Sand-brown tone */
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: #ff4500; /* Orange-red for buttons */
+    color: #fff;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: #ff6347; /* Bright orange */
+    transform: scale(1.05);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 15px;
+    margin: 20px auto;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2); /* Subtle background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 228, 181, 0.8); /* Light sandy brown */
+    border: 2px solid #d2691e; /* Dark brown for volleyball vibe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.cell:hover {
+    background: #ff7f50; /* Coral orange on hover */
+    color: #fff;
+}
+
+#reset {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Congratulatory message styling */
+#win-cat {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the element */
+    background: rgba(255, 255, 255, 0.95); /* Subtle white overlay */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
+    animation: bounce 1s infinite; /* Bouncing animation */
+    z-index: 1000; /* Ensures it is above other elements */
+}
+
+#win-cat img {
+    width: 150px; /* Adjust size for better visibility */
+    margin-bottom: 10px; /* Space between the image and text */
+}
+
+#win-cat p {
+    font-size: 18px; /* Text size for the congratulatory message */
+    color: #333; /* Neutral text color for readability */
+    font-weight: bold; /* Makes the text stand out */
+}
+
+/* Bouncing animation for the congratulatory message */
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1); /* Initial scale */
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1); /* Enlarges slightly */
+    }
+}
